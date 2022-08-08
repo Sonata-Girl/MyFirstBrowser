@@ -1,24 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MyFirstBrowser" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qjo-3Z-jUf">
+                                <rect key="frame" x="348" y="44" width="46" height="34"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrowtriangle.forward.fill" catalog="system" cornerStyle="large">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" red="0.98870617151260376" green="0.8196977972984314" blue="0.0093449223786592484" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="strokeColor" red="0.74759422620000004" green="0.93324994999999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </backgroundConfiguration>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="17"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="buttonForwardAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L1a-YS-kJS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTt-QY-Gkp">
+                                <rect key="frame" x="20" y="44" width="46" height="34"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrowtriangle.backward.fill" catalog="system" imagePadding="0.0" cornerStyle="large">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" red="0.98870617151260376" green="0.8196977972984314" blue="0.0093449223786592484" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="strokeColor" red="0.74759422620000004" green="0.93324994999999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </backgroundConfiguration>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="17"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="buttonBackAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jGo-3P-zon"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J9i-E7-ZHM">
+                                <rect key="frame" x="74" y="44" width="266" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="266" id="E0L-ng-FdG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                            </textField>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g8V-mT-y6x">
+                                <rect key="frame" x="0.0" y="96" width="414" height="800"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Qjo-3Z-jUf" secondAttribute="trailing" constant="20" id="0kp-dL-xaJ"/>
+                            <constraint firstItem="g8V-mT-y6x" firstAttribute="top" secondItem="Qjo-3Z-jUf" secondAttribute="bottom" constant="18" id="1KF-qK-SYx"/>
+                            <constraint firstItem="Qjo-3Z-jUf" firstAttribute="leading" secondItem="J9i-E7-ZHM" secondAttribute="trailing" constant="8" symbolic="YES" id="6CC-bU-SRr"/>
+                            <constraint firstItem="g8V-mT-y6x" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="8E3-dp-VLg"/>
+                            <constraint firstItem="g8V-mT-y6x" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="A2G-eQ-uJr"/>
+                            <constraint firstItem="YTt-QY-Gkp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="G8X-J4-Y8S"/>
+                            <constraint firstItem="Qjo-3Z-jUf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="JHA-9s-SNy"/>
+                            <constraint firstItem="J9i-E7-ZHM" firstAttribute="top" secondItem="YTt-QY-Gkp" secondAttribute="top" id="R7D-aN-5GQ"/>
+                            <constraint firstItem="g8V-mT-y6x" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="drY-5L-6Ca"/>
+                            <constraint firstItem="J9i-E7-ZHM" firstAttribute="leading" secondItem="YTt-QY-Gkp" secondAttribute="trailing" constant="8" symbolic="YES" id="hzM-PC-DSI"/>
+                            <constraint firstAttribute="bottom" secondItem="g8V-mT-y6x" secondAttribute="bottom" id="juB-d4-va4"/>
+                            <constraint firstItem="YTt-QY-Gkp" firstAttribute="width" secondItem="Qjo-3Z-jUf" secondAttribute="width" id="qfl-6o-9SA"/>
+                            <constraint firstItem="YTt-QY-Gkp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="rFf-Fd-Q7M"/>
+                            <constraint firstItem="g8V-mT-y6x" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="yAe-bP-Zrl"/>
+                            <constraint firstAttribute="bottom" secondItem="g8V-mT-y6x" secondAttribute="bottom" id="yqy-D9-WKv"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backButton" destination="YTt-QY-Gkp" id="kPb-Gu-JvF"/>
+                        <outlet property="forwardButton" destination="Qjo-3Z-jUf" id="bn0-Ge-UUl"/>
+                        <outlet property="urlTextField" destination="J9i-E7-ZHM" id="YjX-Ct-ok6"/>
+                        <outlet property="webView" destination="g8V-mT-y6x" id="hdz-R1-GHP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-907.24637681159425" y="205.58035714285714"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="arrowtriangle.backward.fill" catalog="system" width="128" height="113"/>
+        <image name="arrowtriangle.forward.fill" catalog="system" width="128" height="113"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
